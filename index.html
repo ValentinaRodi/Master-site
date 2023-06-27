@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мастера ремонта</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prosto+One&family=Roboto&family=Ubuntu:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="wrapper fon">
+      <div>
+        <header class="header">
+          <a href="#">
+            <img class="logo" src="img/logo.svg" alt="logo" />
+            <img class="logo_mobile" src="img/logoMobile.svg" alt="logo" />
+          </a>
+          <div class="header__navbar burger_display">
+            <a class="navbar__link" href="#">Ремонт</a>
+            <a class="navbar__link" href="#">Портфолио</a>
+            <a class="navbar__link" href="#">Отзывы</a>
+          </div>
+          <div class="header__btn">
+            <button class="navbar__btn" onclick="handlerOpenPopup()">Заказать звонок</button>
+          </div>
+          <div class="menu__burger">
+            <button class="btn__phone" onclick="handlerOpenPopup()">
+              <img class="img-phone" src="/img/vector3.png" alt="phone" />
+            </button>
+            <button class="btn__burger">
+              <img
+                class="img-burger img-burger_close"
+                src="/img/ic_baseline-menu.png"
+                alt="burger"
+              />
+              <img
+                class="img-burger img-burger_open burger_display"
+                src="/img/ic_sharp-close.png"
+                alt="burger"
+              />
+            </button>
+          </div>
+        </header>
+        <div class="main grid">
+          <div class="main__info grid-item1">
+            <h1 class="main__title">
+              Компания <span class="main__title_color">«Мастера</span>
+              <span class="main__title_color">ремонта»</span> в москве
+            </h1>
+            <p class="main__text">
+              Сделаем качественный ремонт квартиры под ключ.<span
+                class="main__text_color"
+                >Расширенная гарантия до 3х лет</span
+              >. Подбор, закупка и доставка материала.
+            </p>
+          </div>
+          <div class="info__people grid-item2">
+            <img class="people__img" src="/img/group9.png" alt="lid" />
+            <img src="/img/group6.png" alt="lid" />
+            <img src="/img/group7.png" alt="lid" />
+            <img src="/img/group8.png" alt="lid" />
+          </div>
+          <form class="form grid-item_big" id="priceForm">
+            <h3>Узнать стоимость ремонта</h3>
+            <div class="form__layout">
+              <div>
+                <p>Площадь квартиры:</p>
+                <div class="form__square">
+                  <div class="form__square_output">
+                    <output id="rangevalue">48</output>
+                    <span>м<sup>2</sup></span>
+                  </div>
+                  <input
+                    name="square"
+                    type="range"
+                    value="48"
+                    min="0"
+                    max="300"
+                    oninput="rangevalue.value=value"
+                  />
+                </div>
+              </div>
+              <div>
+                <p>Количество комнат:</p>
+                <div class="form__layout_radio">
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="room"
+                    id="1"
+                    value="1"
+                  /><label class="form__label form__label_radio" for="1"
+                    >1</label
+                  >
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="room"
+                    id="2"
+                    value="2"
+                  /><label class="form__label form__label_radio" for="2"
+                    >2</label
+                  >
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="room"
+                    id="3"
+                    value="3"
+                    checked
+                  /><label class="form__label form__label_radio" for="3"
+                    >3</label
+                  >
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="room"
+                    id="4+"
+                    value="4+"
+                  /><label class="form__label form__label_radio" for="4+"
+                    >4+</label
+                  >
+                </div>
+              </div>
+              <div>
+                <p>Какая квартира?</p>
+                <div class="form__layout_flat">
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="flat"
+                    id="new"
+                    value="new"
+                    checked
+                  /><label class="form__label form__label_flat" for="new"
+                    >Новостройка</label
+                  >
+                  <input
+                    class="custom-radio"
+                    type="radio"
+                    name="flat"
+                    id="secondary"
+                    value="secondary"
+                  /><label class="form__label form__label_flat" for="secondary"
+                    >Вторичка</label
+                  >
+                </div>
+              </div>
+              <div>
+                <p>Какой ремонт хотите?</p>
+                <div class="__select" data-state="">
+                  <div class="__select__title" data-default="Option 0">
+                    <span class="select__title_span">Черновой</span>
+                    <img
+                      class="select__vector vector-rotate"
+                      src="/img/vector.png"
+                      alt="vector"
+                    />
+                  </div>
+                  <div class="__select__content select__content_none">
+                    <input
+                      id="singleSelect0"
+                      class="__select__input"
+                      type="radio"
+                      name="singleSelect"
+                      value="rough"
+                      checked
+                    />
+                    <label for="singleSelect0" class="__select__label"
+                      >Черновой</label
+                    >
+                    <input
+                      id="singleSelect1"
+                      class="__select__input"
+                      type="radio"
+                      name="singleSelect"
+                      value="clean"
+                    />
+                    <label for="singleSelect1" class="__select__label"
+                      >Чистовой</label
+                    >
+                    <input
+                      id="singleSelect2"
+                      class="__select__input"
+                      type="radio"
+                      name="singleSelect"
+                      value="design"
+                    />
+                    <label for="singleSelect2" class="__select__label"
+                      >Дизайнерский</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p>Что включить в расчет?</p>
+                <div class="check">
+                  <input
+                    class="input__check"
+                    type="checkbox"
+                    name="materialRough"
+                    id="check1"
+                  />
+                  <label class="label__check" for="check1"></label>
+                  <p class="form__label">Черновые материалы</p>
+                </div>
+                <div class="check">
+                  <input
+                    class="input__check"
+                    type="checkbox"
+                    name="materialClean"
+                    id="check2"
+                  />
+                  <label class="label__check" for="check2"></label>
+                  <p class="form__label">Чистовые материалы</p>
+                </div>
+                <div class="check">
+                  <input
+                    class="input__check"
+                    type="checkbox"
+                    name="materialDesign"
+                    id="check3"
+                  />
+                  <label class="label__check" for="check3"></label>
+                  <p class="form__label">Дизайн-проект</p>
+                </div>
+              </div>
+              <button class="form__btn btn__popup_on" onclick="serializeFormTake()">
+                Узнать стоимость ремонта
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="main__btn_wrapper">
+        <button class="main__btn">
+          <img src="/img/vector2.png" alt="button" />
+        </button>
+      </div>
+      <form
+        class="popup popup1 popup_none"
+        id="feedbackForm"
+        method="POST"
+        action="mySevlet"
+        onsubmit="handleFormSubmit(); 
+          return false;"
+      >
+        <div>
+          <button class="popup__btn">
+            <img src="/img/ic_twotone-close.png" alt="close" />
+          </button>
+          <h3 class="popup__title">Отправить заявку на расчет</h3>
+        </div>
+        <div>
+          <input
+            class="popup__input popup__input-name"
+            type="text"
+            name="name"
+            placeholder="Ваше имя"
+            value=""
+          />
+          <input
+            class="popup__input popup__input-tell"
+            type="tel"
+            pattern="[0-9]{11}"
+            minlength="11"
+            maxlength="11"
+            name="tel"
+            placeholder="Ваш номер телефона"
+            value=""
+          />
+        </div>
+        <button
+          class="form__btn form__btn_margin form__btn_submit"
+          type="submit"
+        >
+          Рассчитать
+        </button>
+        <input type="hidden" id="feedback" name="feedback" value="" />
+      </form>
+      <div class="overlay overlay_display"></div>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
